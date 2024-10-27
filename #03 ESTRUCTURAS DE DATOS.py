@@ -4,77 +4,7 @@
 - Utiliza operaciones de inserción, borrado, actualización y ordenación.
 """
 
-# Append
-lista = [1,2,3,4,5,6,7]
-lista.append(8)
-print(lista)
 
-# Extend
-lista.extend([9,10,11])
-print(lista)
-
-# Insert
-lista.insert(12, "Doce")
-print(lista)
-
-# Remove
-lista.remove(1)
-print(lista)
-
-# Pop
-lista.pop()
-print(lista)
-
-# Clear
-lista.clear()
-print(lista)
-
-# Index
-lista2 = [10,20,30,40,50,60,70,80,90,10]
-# Buscar el índice de la primera aparición de 20
-indice = lista2.index(30)
-print(indice)  # Salida: 1
-
-# Buscar el índice de 20 comenzando desde el índice 2
-indice_con_start = lista2.index(50, 2)
-print(indice_con_start)  # Salida: 4
-
-# Buscar el índice de 30 en un rango específico
-indice_con_rango = lista2.index(20, 0, 4)
-print(indice_con_rango)  # Salida: 2
-
-# Count
-contador = lista2.count(10)
-print(contador)
-
-# Sort
-lista2.sort()
-print(lista2)
-# Sort reverse
-lista2.sort(reverse=True)
-print(lista2)
-# Sort key
-lista3 = ["Manzana", "Pera", "Ajo", "Mango", "Guayaba"]
-lista3.sort(key=len)
-print(lista3)
-# Sort key reverse
-lista3.sort(key=len, reverse=True)
-print(lista3)
-
-# Reverse
-lista3.reverse()
-print(lista3)
-
-# Copy 
-lista4 = ["Rojo", "Verde", "Azul", "Amarrillo", "Cafe"]
-copia_lista4 = lista4.copy()
-
-print(lista4)
-print(copia_lista4)
-
-copia_lista4.append("Morado")
-print(lista4)
-print(copia_lista4)
 
 """
 - DIFICULTAD EXTRA (opcional):
@@ -88,5 +18,55 @@ print(copia_lista4)
 - También se debe proponer una operación de finalización del programa.
 """
 
+def agenda():
+
+    agenda = {}
+
+    def datos():
+        phone = input("Introduce tu numero de teléfono: ")
+        if phone.isdigit() and len(phone) > 0 and len(phone) <= 11:
+            agenda[name] = phone
+        else:
+            print("Introduce un numero de teléfono valido")
+    while True:
+
+        print("")
+        print("1, Buscar Contacto")
+        print("2, Insertar Contacto")
+        print("3, Actualizar Contacto")
+        print("4, Eliminar Contacto")
+        print("5, Salir")
+
+        option = input("Elije una accion: ")
+
+        match option:
+            case "1":
+                name = input("Introduce el nombre del contacto: ")
+                if name in agenda:
+                    print(f"El número de {name} es {agenda[name]}.")
+                else:
+                    print(f"El contacto {name} no existe")
+            case "2":
+                name = input("Introduce el nombre del contacto: ")
+                datos()
+            case "3":
+                name = input("Introduce el contacto a actualizar: ")
+                if name in agenda:
+                    datos()
+                else:
+                    print(f"El contacto {name} no existe")
+            case "4":
+                name = input("Introduce el nombre del contacto a eliminar: ")
+                if name in agenda:
+                    del agenda[name]
+                else:
+                    print(f"El contacto {name} no existe")
+            case "5":
+                print("Saliendo de la agenda")
+                break
+            case _:
+                print("Opción no valida. Elige una opción del 1 al 5")
+
+agenda()
 
 
