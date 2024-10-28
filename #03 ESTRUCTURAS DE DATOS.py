@@ -5,6 +5,61 @@
 """
 
 
+# Estructuras
+
+# Listas
+my_list: list = ["Amarrillo", "Negro", "Blanco", "Verde"]
+print(my_list)
+my_list.append("Rojo")  # Inserción
+my_list.append("Cafe")
+print(my_list)
+my_list.remove("Negro")  # Eliminación
+print(my_list)
+print(my_list[1])  # Acceso
+my_list[1] = "Morado"  # Actualización
+print(my_list)
+my_list.sort()  # Ordenación
+print(my_list)
+print(type(my_list))
+
+# Tuplas
+my_tuple: tuple = ("Daniel", "Christian", "@christian", "24")
+print(my_tuple[1])  # Acceso
+print(my_tuple[3])
+my_tuple = tuple(sorted(my_tuple))  # Ordenación
+print(my_tuple)
+print(type(my_tuple))
+
+# Sets
+my_set: set = {"Christian", "Daniel", "@christian", "24"}
+print(my_set)
+my_set.add("christian@gmail.com")  # Inserción
+my_set.add("christian@gmail.com")
+print(my_set)
+my_set.remove("Daniel")  # Eliminación
+print(my_set)
+my_set = set(sorted(my_set))  # No se puede ordenar
+print(my_set)
+print(type(my_set))
+
+# Diccionario
+my_dict: dict = {
+    "name": "Christian",
+    "surname": "Daniel",
+    "alias": "@christian",
+    "age": "24"
+}
+my_dict["email"] = "christian@gmail.com"  # Inserción
+print(my_dict)
+del my_dict["surname"]  # Eliminación
+print(my_dict)
+print(my_dict["name"])  # Acceso
+my_dict["age"] = "25"  # Actualización
+print(my_dict)
+my_dict = dict(sorted(my_dict.items()))  # Ordenación
+print(my_dict)
+print(type(my_dict))
+
 
 """
 - DIFICULTAD EXTRA (opcional):
