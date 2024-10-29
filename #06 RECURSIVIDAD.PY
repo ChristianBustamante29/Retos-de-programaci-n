@@ -31,7 +31,7 @@ def factorial(number: int) -> int:
         return number * factorial(number - 1)
 
 
-print(factorial(5))
+print(factorial(6))
 
 
 def fibonacci(number: int) -> int:
@@ -39,7 +39,7 @@ def fibonacci(number: int) -> int:
         print("La posición tiene que ser mayor que cero")
         return 0
     elif number == 1:
-        return 0
+        return 1
     elif number == 2:
         return 1
     else:
